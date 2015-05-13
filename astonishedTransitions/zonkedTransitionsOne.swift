@@ -23,6 +23,8 @@ class zonkedTransitionsOne: NSObject, UIViewControllerAnimatedTransitioning, UIV
         let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey)
         let toView = transitionContext.viewForKey(UITransitionContextToViewKey)
         
+        println("Mudei")
+        
         
         // play the animation
         let duration = self.transitionDuration(transitionContext)
