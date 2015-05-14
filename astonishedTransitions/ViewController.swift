@@ -12,10 +12,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var tableView: UITableView!
     
-    let items = ["Animation 1","Animation 2"]
+    
+    let transitionManagers = [zonkedTransitionsOne(), zonkedTransitionsTwo(), zonkedTransitionThree()]
+    
+    let items = ["Animation 1","Animation 2", "Animation 3"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -30,6 +35,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
+        let toViewController = UIViewController()
+        toViewController.view.backgroundColor = UIColor.blackColor()
+        toViewController.transitioningDelegate = transitionManagers[indexPath.row] as? UIViewControllerTransitioningDelegate
+        self.presentViewController( toViewController, animated: true, completion: nil)
+        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -39,7 +49,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
-
 
 }
 
