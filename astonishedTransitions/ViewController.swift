@@ -36,7 +36,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let toViewController = UIViewController()
-        toViewController.view.backgroundColor = UIColor.blackColor()
+        toViewController.view.backgroundColor = UIColor.grayColor()
         toViewController.transitioningDelegate = transitionManagers[indexPath.row] as? UIViewControllerTransitioningDelegate
         self.presentViewController( toViewController, animated: true, completion: nil)
         
