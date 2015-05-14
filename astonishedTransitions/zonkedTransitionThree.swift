@@ -24,31 +24,18 @@ class zonkedTransitionThree:  NSObject, UIViewControllerAnimatedTransitioning, U
         let toView = transitionContext.viewForKey(UITransitionContextToViewKey)!
         
         // set up from 2D transforms that we'll use in the animation
-        let π : CGFloat = 3.14159265359
+
         
-        let offScreenRight = CGAffineTransformMakeRotation(-π/3)
-        let offScreenLeft = CGAffineTransformMakeRotation(π/3)
+        let offScreenFall = CGAffineTransformMakeTranslation(0, toView.bounds.height)
+        let offScreenUp = CGAffineTransformMakeTranslation(0, -toView.bounds.height)
         
         // prepare the toView for the animation
-        toView.transform = self.presenting ? offScreenRight : offScreenLeft
+        toView.transform = self.presenting ? offScreenFall : offScreenUp
         
-        // set the anchor point so that rotations happen from the top-left corner
-        toView.layer.anchorPoint = CGPoint(x:0.5, y:0)
-        fromView.layer.anchorPoint = CGPoint(x: 0.5, y:0)
-        
-        // updating the anchor point also moves the position to we have to move the center position to the top-left to compensate
-        let toViewCGPoint = CGPoint(x:160, y: 0)
-        let fromViewCGPoint = CGPoint(x: 160, y: 0 )
-        
-        
-        
-        toView.layer.position = toViewCGPoint
-        fromView.layer.position = fromViewCGPoint
+
         
         container.backgroundColor = self.presenting ? toView.backgroundColor : fromView.backgroundColor
         
-        toView.alpha = 0.0
-        fromView.alpha = 0.95
         // add the both views to our view controller
         container.addSubview(toView)
         container.addSubview(fromView)
@@ -62,11 +49,11 @@ class zonkedTransitionThree:  NSObject, UIViewControllerAnimatedTransitioning, U
         // for this example, just slid both fromView and toView to the left at the same time
         // meaning fromView is pushed off the screen and toView slides into view
         // we also use the block animation usingSpringWithDamping for a little bounce
-        UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.8, options: nil, animations: {
+        UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: UIViewAnimationOptions.CurveEaseIn, animations: {
             
             // slide fromView off either the left or right edge of the screen
             // depending if we're presenting or dismissing this view
-            fromView.transform = self.presenting ? offScreenLeft : offScreenRight
+            fromView.transform = self.presenting ? offScreenFall : offScreenUp
             toView.transform = CGAffineTransformIdentity
             toView.alpha = 1
             fromView.alpha = 0.0
