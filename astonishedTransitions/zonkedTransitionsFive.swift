@@ -25,12 +25,8 @@ class zonkedTransitionsFive: NSObject, UIViewControllerAnimatedTransitioning, UI
         // set up from 2D transforms that we'll use in the animation
         
         
-        let offScreenFall = CGAffineTransformMakeTranslation(0, toView.bounds.height)
-        let offScreenUp = CGAffineTransformMakeTranslation(0, -toView.bounds.height)
-        
-        // prepare the toView for the animation
-        toView.transform = self.presenting ? offScreenFall : offScreenUp
-        
+        let offScreenFall = CGAffineTransformMakeTranslation(0, fromView.bounds.height)
+        let offScreenUp = CGAffineTransformMakeTranslation(0, -fromView.bounds.height)
         
         
         container.backgroundColor = self.presenting ? toView.backgroundColor : fromView.backgroundColor
@@ -38,6 +34,12 @@ class zonkedTransitionsFive: NSObject, UIViewControllerAnimatedTransitioning, UI
         // add the both views to our view controller
         container.addSubview(toView)
         container.addSubview(fromView)
+        
+        let prepareView = CGAffineTransformMakeTranslation(0, -fromView.bounds.height)
+        toView.transform = prepareView
+        
+        // prepare the toView for the animation
+        toView.transform = self.presenting ? offScreenFall : offScreenUp
         
         // get the duration of the animation
         // DON'T just type '0.5s' -- the reason why won't make sense until the next post
@@ -52,7 +54,7 @@ class zonkedTransitionsFive: NSObject, UIViewControllerAnimatedTransitioning, UI
             
             // slide fromView off either the left or right edge of the screen
             // depending if we're presenting or dismissing this view
-            fromView.transform = self.presenting ? offScreenFall : offScreenUp
+            toView.transform = self.presenting ? offScreenFall : offScreenUp
             toView.transform = CGAffineTransformIdentity
             toView.alpha = 1
             fromView.alpha = 0.0
