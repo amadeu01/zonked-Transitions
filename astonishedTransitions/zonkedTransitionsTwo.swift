@@ -40,6 +40,9 @@ class zonkedTransitionsTwo: NSObject, UIViewControllerAnimatedTransitioning, UIV
         
         toView.alpha = 0.0
         
+        container.addSubview(toView)
+        container.addSubview(fromView)
+        
         // play the animation
         let duration = self.transitionDuration(transitionContext)
         let option = UIViewAnimationOptions.CurveEaseIn
