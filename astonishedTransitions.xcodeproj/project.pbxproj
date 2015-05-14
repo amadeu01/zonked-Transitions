@@ -17,6 +17,7 @@
 		2EF908C11B0168B40091577D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EF908BF1B0168B40091577D /* LaunchScreen.xib */; };
 		2EF908CD1B0168B40091577D /* astonishedTransitionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF908CC1B0168B40091577D /* astonishedTransitionsTests.swift */; };
 		2EF908D71B0169310091577D /* zonkedTransitionsOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF908D61B0169310091577D /* zonkedTransitionsOne.swift */; };
+		AC61DDB11B04E27C004D1BEF /* zonkedTransitionsFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61DDB01B04E27C004D1BEF /* zonkedTransitionsFive.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		2EF908CB1B0168B40091577D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EF908CC1B0168B40091577D /* astonishedTransitionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = astonishedTransitionsTests.swift; sourceTree = "<group>"; };
 		2EF908D61B0169310091577D /* zonkedTransitionsOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = zonkedTransitionsOne.swift; sourceTree = "<group>"; };
+		AC61DDB01B04E27C004D1BEF /* zonkedTransitionsFive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = zonkedTransitionsFive.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				2E4E847E1B04D84000EF4D02 /* zonkedTransitionThree.swift */,
 				2E4E847A1B03720400EF4D02 /* zonkedTransitionsTwo.swift */,
 				2E4E84801B04DB6E00EF4D02 /* zonkedTransitionsFour.swift */,
+				AC61DDB01B04E27C004D1BEF /* zonkedTransitionsFive.swift */,
 				2EF908BD1B0168B40091577D /* Images.xcassets */,
 				2EF908BF1B0168B40091577D /* LaunchScreen.xib */,
 				2EF908B41B0168B40091577D /* Supporting Files */,
@@ -227,6 +230,7 @@
 				2E4E847B1B03720400EF4D02 /* zonkedTransitionsTwo.swift in Sources */,
 				2E4E84811B04DB6E00EF4D02 /* zonkedTransitionsFour.swift in Sources */,
 				2EF908B91B0168B40091577D /* ViewController.swift in Sources */,
+				AC61DDB11B04E27C004D1BEF /* zonkedTransitionsFive.swift in Sources */,
 				2EF908B71B0168B40091577D /* AppDelegate.swift in Sources */,
 				2E4E847F1B04D84000EF4D02 /* zonkedTransitionThree.swift in Sources */,
 				2EF908D71B0169310091577D /* zonkedTransitionsOne.swift in Sources */,
