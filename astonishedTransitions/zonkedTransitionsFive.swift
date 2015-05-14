@@ -31,15 +31,17 @@ class zonkedTransitionsFive: NSObject, UIViewControllerAnimatedTransitioning, UI
         
         container.backgroundColor = self.presenting ? toView.backgroundColor : fromView.backgroundColor
         
+        fromView.alpha = 0.5
+        
+        let prepareView = CGAffineTransformMakeTranslation(0, -520)
+        toView.transform = prepareView
+        
         // add the both views to our view controller
         container.addSubview(toView)
         container.addSubview(fromView)
         
-        let prepareView = CGAffineTransformMakeTranslation(0, -fromView.bounds.height)
-        toView.transform = prepareView
+
         
-        // prepare the toView for the animation
-        toView.transform = self.presenting ? offScreenFall : offScreenUp
         
         // get the duration of the animation
         // DON'T just type '0.5s' -- the reason why won't make sense until the next post
@@ -50,14 +52,14 @@ class zonkedTransitionsFive: NSObject, UIViewControllerAnimatedTransitioning, UI
         // for this example, just slid both fromView and toView to the left at the same time
         // meaning fromView is pushed off the screen and toView slides into view
         // we also use the block animation usingSpringWithDamping for a little bounce
-        UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+        UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.1, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.CurveEaseIn, animations: {
             
             // slide fromView off either the left or right edge of the screen
             // depending if we're presenting or dismissing this view
-            toView.transform = self.presenting ? offScreenFall : offScreenUp
-            toView.transform = CGAffineTransformIdentity
+            //toView.transform = self.presenting ? offScreenFall : offScreenUp
+            toView.transform = prepareView
             toView.alpha = 1
-            fromView.alpha = 0.0
+//            fromView.alpha = 0
             container.backgroundColor =  toView.backgroundColor
             }, completion: { finished in
                 

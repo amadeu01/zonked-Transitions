@@ -29,8 +29,6 @@ class zonkedTransitionThree:  NSObject, UIViewControllerAnimatedTransitioning, U
         let offScreenFall = CGAffineTransformMakeTranslation(0, toView.bounds.height)
         let offScreenUp = CGAffineTransformMakeTranslation(0, -toView.bounds.height)
         
-        // prepare the toView for the animation
-        toView.transform = self.presenting ? offScreenFall : offScreenUp
         
 
         
