@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E4E847B1B03720400EF4D02 /* zonkedTransitionsTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E847A1B03720400EF4D02 /* zonkedTransitionsTwo.swift */; };
 		2EF908B71B0168B40091577D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF908B61B0168B40091577D /* AppDelegate.swift */; };
 		2EF908B91B0168B40091577D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF908B81B0168B40091577D /* ViewController.swift */; };
 		2EF908BC1B0168B40091577D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EF908BA1B0168B40091577D /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E4E847A1B03720400EF4D02 /* zonkedTransitionsTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = zonkedTransitionsTwo.swift; sourceTree = "<group>"; };
 		2EF908B11B0168B40091577D /* astonishedTransitions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = astonishedTransitions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EF908B51B0168B40091577D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EF908B61B0168B40091577D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				2EF908B81B0168B40091577D /* ViewController.swift */,
 				2EF908BA1B0168B40091577D /* Main.storyboard */,
 				2EF908D61B0169310091577D /* zonkedTransitionsOne.swift */,
+				2E4E847A1B03720400EF4D02 /* zonkedTransitionsTwo.swift */,
 				2EF908BD1B0168B40091577D /* Images.xcassets */,
 				2EF908BF1B0168B40091577D /* LaunchScreen.xib */,
 				2EF908B41B0168B40091577D /* Supporting Files */,
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E4E847B1B03720400EF4D02 /* zonkedTransitionsTwo.swift in Sources */,
 				2EF908B91B0168B40091577D /* ViewController.swift in Sources */,
 				2EF908B71B0168B40091577D /* AppDelegate.swift in Sources */,
 				2EF908D71B0169310091577D /* zonkedTransitionsOne.swift in Sources */,
@@ -413,6 +417,7 @@
 				2EF908D21B0168B40091577D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2EF908D31B0168B40091577D /* Build configuration list for PBXNativeTarget "astonishedTransitionsTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +426,7 @@
 				2EF908D51B0168B40091577D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
