@@ -31,11 +31,11 @@ class zonkedTransitionsTwo: NSObject, UIViewControllerAnimatedTransitioning, UIV
         fromView.layer.anchorPoint = CGPointMake( 0.5 , 0 )
         toView.layer.anchorPoint = CGPointMake( 0.5 , 0 )
         
-        toView.transform = offScreenLeft
-        fromView.transform = offScreenLeft
+        //toView.transform = offScreenLeft
+        //fromView.transform = offScreenLeft
         //container.transform = offScreenLeft
-        let toViewCGPoint = CGPoint(x:160, y: 0)
-        let fromViewCGPoint = CGPoint(x: 160, y: 0 )
+        let toViewCGPoint = CGPoint(x:container.frame.width/2, y: 0)
+        let fromViewCGPoint = CGPoint(x: container.frame.width/2, y: 0 )
         
         
         //
