@@ -40,19 +40,22 @@ class zonkedTransitionsSeven: NSObject , UIViewControllerAnimatedTransitioning, 
         
 
         
-        UIView.animateKeyframesWithDuration(duration, delay: 0, options: nil, animations: {
+        UIView.animateKeyframesWithDuration(duration, delay: 0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: {
             
-            UIView.addKeyframeWithRelativeStartTime(0, relativeDuration: 11/12, animations: {
-                
+            UIView.addKeyframeWithRelativeStartTime(0, relativeDuration: 7/12, animations: {
                 fromView.alpha = 0
-                toView.alpha = 1
+                container.bringSubviewToFront(animatedImageView)
+
+                
             })
-            UIView.addKeyframeWithRelativeStartTime(11/12, relativeDuration: 1/12, animations: {
-                animatedImageView.removeFromSuperview()
-            })
+            UIView.addKeyframeWithRelativeStartTime(7/12, relativeDuration: 5/12, animations: {
+                animatedImageView.alpha = 0
+                toView.alpha=1
+                            })
             
             }, completion: { finished in
-                
+                animatedImageView.removeFromSuperview()
+
                 transitionContext.completeTransition(true)
         })
         
@@ -70,7 +73,7 @@ class zonkedTransitionsSeven: NSObject , UIViewControllerAnimatedTransitioning, 
     
     // return how many seconds the transiton animation will take
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
-        return 1.75
+        return 2.5
     }
     
     // MARK: UIViewControllerTransitioningDelegate protocol methods
