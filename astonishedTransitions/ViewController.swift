@@ -13,9 +13,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var tableView: UITableView!
     
     
-    let transitionManagers = [zonkedTransitionsOne(), zonkedTransitionsTwo(), zonkedTransitionThree(),zonkedTransitionsFour(),zonkedTransitionsFive(),zonkedTransitionsSix()]
+    let transitionManagers = [zonkedTransitionsOne(), zonkedTransitionsTwo(), zonkedTransitionThree(),zonkedTransitionsFour(),zonkedTransitionsFive(),zonkedTransitionsSix(),zonkedTransitionsSeven()]
     
-    let items = ["Animation 1","Animation 2", "Animation 3","Animation 4","Animation 5","Animation 6"]
+    let items = ["Animation 1","Animation 2", "Animation 3","Animation 4","Animation 5","Animation 6","Animation 7"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
