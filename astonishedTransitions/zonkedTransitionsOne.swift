@@ -28,7 +28,7 @@ class zonkedTransitionsOne: NSObject, UIViewControllerAnimatedTransitioning, UIV
         
         // play the animation
         let duration = self.transitionDuration(transitionContext)
-        let option = UIViewKeyframeAnimationOptions.CalculationModePaced
+        let option = UIViewKeyframeAnimationOptions.CalculationModeCubicPaced
         
         let stick = UIImageView(image: UIImage(named: "stick-push"))
         stick.frame = CGRect(x: container.frame.width, y: container.frame.height/2 - 20, width: 50, height: 41)
@@ -43,24 +43,29 @@ class zonkedTransitionsOne: NSObject, UIViewControllerAnimatedTransitioning, UIV
         container.addSubview(toView)
         
         
-        UIView.animateKeyframesWithDuration(duration, delay: self.delay, options: option, animations: {
+        UIView.animateKeyframesWithDuration(duration, delay: self.delay, options: nil, animations: {
         
-            UIView.addKeyframeWithRelativeStartTime(0, relativeDuration: 0, animations: {
+            UIView.addKeyframeWithRelativeStartTime(0, relativeDuration: 1, animations: {
             //setting alpha
             fromView.transform = offLeft
             stick.transform = offLeft
             })
-            UIView.addKeyframeWithRelativeStartTime(0, relativeDuration: 0, animations: {
+            UIView.addKeyframeWithRelativeStartTime(1, relativeDuration: 1, animations: {
+                //setting alpha
+                toView.alpha = 0.1
+                
+            })
+            UIView.addKeyframeWithRelativeStartTime(1, relativeDuration: 1.75, animations: {
                 //setting alpha
                 toView.alpha = 1
                 stick.alpha = 0.0
             })
             
             
-            
             }, completion: { finished in
                 
                 transitionContext.completeTransition(true)
+                fromView.transform = CGAffineTransformIdentity
         })
         
     
