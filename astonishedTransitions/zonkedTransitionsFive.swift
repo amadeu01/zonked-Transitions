@@ -30,9 +30,6 @@ class zonkedTransitionsFive: NSObject, UIViewControllerAnimatedTransitioning, UI
         let offScreenUp3D = CATransform3DMakeTranslation(0, -container.frame.height, 10)
         let offScreenFall3D = CATransform3DMakeTranslation(0, 0, -10)
         
-        let scale = CGAffineTransformMakeScale( 2 , 2 )
-        
-        //toView.transform = scale
         
         toView.layer.transform = offScreenUp3D
         
@@ -45,13 +42,7 @@ class zonkedTransitionsFive: NSObject, UIViewControllerAnimatedTransitioning, UI
         
         UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: nil, animations: {
             
-            //toView.transform = CGAffineTransformIdentity
-            
             toView.layer.transform = CATransform3DIdentity
-            //fromView.layer.transform = offScreenFall3D
-            toView.alpha = 1
-            fromView.alpha = 1
-            
             
             }, completion: { finished in
                 
