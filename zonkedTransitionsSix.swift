@@ -24,7 +24,7 @@ class zonkedTransitionsSix: NSObject, UIViewControllerAnimatedTransitioning, UIV
         
         
         let offScreenRight = UIViewAnimationOptions.TransitionFlipFromRight
-        let offScreenLeft = UIViewAnimationOptions.TransitionFlipFromRight
+        let offScreenLeft = UIViewAnimationOptions.TransitionFlipFromLeft
         
         
         
@@ -32,14 +32,23 @@ class zonkedTransitionsSix: NSObject, UIViewControllerAnimatedTransitioning, UIV
         container.backgroundColor = self.presenting ? toView.backgroundColor : fromView.backgroundColor
         
         
-        container.addSubview(fromView)
+        
 
+        var view: ( to: UIView , from: UIView )
         
-        
+        if presenting {
+            view.to = toView
+            view.from = container
+        } else {
+            view.from = fromView
+            view.to = toView
+        }
+
         let duration = self.transitionDuration(transitionContext)
         
+        
     
-        UIView.transitionFromView(container, toView: toView, duration: duration, options: presenting ? offScreenRight : offScreenLeft, completion: {
+        UIView.transitionFromView(view.from, toView: view.to , duration: duration, options: presenting ? offScreenRight : offScreenLeft, completion: {
             finished in transitionContext.completeTransition(true)
         })
         

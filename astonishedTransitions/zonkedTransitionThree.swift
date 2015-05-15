@@ -28,7 +28,7 @@ class zonkedTransitionThree:  NSObject, UIViewControllerAnimatedTransitioning, U
         let offScreenUp = CGAffineTransformMakeTranslation(0, -container.frame.height)
         
         
-//        toView.transform = offScreenUp
+        toView.transform = offScreenUp
         
 
         
