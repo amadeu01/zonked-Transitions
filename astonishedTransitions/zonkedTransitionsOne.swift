@@ -20,24 +20,33 @@ class zonkedTransitionsOne: NSObject, UIViewControllerAnimatedTransitioning, UIV
         // fromView - ViewController's view from where the animation is coming from
         // toView = ViewController's view to where the animation is going to
         let container = transitionContext.containerView()
-        let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey)
-        let toView = transitionContext.viewForKey(UITransitionContextToViewKey)
+        let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey)!
+        let toView = transitionContext.viewForKey(UITransitionContextToViewKey)!
         
-        println("Mudei")
+        
         
         
         // play the animation
         let duration = self.transitionDuration(transitionContext)
         let option = UIViewAnimationOptions.CurveEaseIn
         
-        let stick = UIImageView(image: <#UIImage!#>)
+        let stick = UIImageView(image: UIImage(named: "stick-push"))
+        
+        toView.alpha = 0.0
+        
+        container.addSubview(fromView)
+        container.addSubview(stick)
+        container.addSubview(toView)
         
         
+        UIView.animateWithDuration(duration, delay: self.delay, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: nil, animations: {
         
-        
-        UIView.animateWithDuration(duration, delay: self.delay, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.3, options: option, animations: {
             
-            toView?.transform = CGAffineTransformIdentity
+            //setting alpha
+            fromView.alpha = 0.0
+            toView.alpha = 1
+            
+            
             
             }, completion: { finished in
                 
@@ -45,6 +54,7 @@ class zonkedTransitionsOne: NSObject, UIViewControllerAnimatedTransitioning, UIV
         })
         
     
+        
         
     }
     
