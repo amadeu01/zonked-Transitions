@@ -30,7 +30,7 @@ class zonkedTransitionsOne: NSObject, UIViewControllerAnimatedTransitioning, UIV
         let duration = self.transitionDuration(transitionContext)
         let option = UIViewAnimationOptions.CurveEaseIn
         
-        let stick = UIImageView(image: <#UIImage!#>)
+//        let stick = UIImageView(image: <#UIImage!#>)
         
         
         

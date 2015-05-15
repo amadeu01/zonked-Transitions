@@ -33,7 +33,6 @@ class zonkedTransitionsSix: NSObject, UIViewControllerAnimatedTransitioning, UIV
         
         
         container.addSubview(fromView)
-//        container.addSubview(toView)
 
         
         
@@ -44,20 +43,6 @@ class zonkedTransitionsSix: NSObject, UIViewControllerAnimatedTransitioning, UIV
             finished in transitionContext.completeTransition(true)
         })
         
-        
-//        UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: presenting ? offScreenRight : offScreenLeft, animations: {
-//            
-//            
-//            toView.alpha = 1
-//            fromView.alpha = 1
-//            
-//            
-//            }, completion: { finished in
-//                
-//                //  finished animating
-//                transitionContext.completeTransition(true)
-//                
-//        })
         
     }
     
