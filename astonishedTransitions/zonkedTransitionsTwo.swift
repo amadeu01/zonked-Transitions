@@ -50,7 +50,7 @@ class zonkedTransitionsTwo: NSObject, UIViewControllerAnimatedTransitioning, UIV
         
         // play the animation
         let duration = self.transitionDuration(transitionContext)
-        let option = UIViewKeyframeAnimationOptions.CalculationModeCubicPaced
+        let option = UIViewKeyframeAnimationOptions.CalculationModePaced
         //alpha
         toView.alpha = 0.0
         

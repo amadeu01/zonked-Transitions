@@ -22,29 +22,39 @@ class zonkedTransitionsOne: NSObject, UIViewControllerAnimatedTransitioning, UIV
         let container = transitionContext.containerView()
         let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey)!
         let toView = transitionContext.viewForKey(UITransitionContextToViewKey)!
-        
+        let offLeft = CGAffineTransformMakeTranslation(-container.frame.width, 0)
         
         
         
         // play the animation
         let duration = self.transitionDuration(transitionContext)
-        let option = UIViewAnimationOptions.CurveEaseIn
+        let option = UIViewKeyframeAnimationOptions.CalculationModePaced
         
         let stick = UIImageView(image: UIImage(named: "stick-push"))
+        stick.frame = CGRect(x: container.frame.width, y: container.frame.height/2 - 20, width: 50, height: 41)
         
         toView.alpha = 0.0
         
+//        toView.transform = CGAffineTransformMakeTranslation(container.frame.width, 0)
+//        stick.transform = CGAffineTransformMakeTranslation(container.frame.width, 0)
+        container.backgroundColor = UIColor.whiteColor()
         container.addSubview(fromView)
         container.addSubview(stick)
         container.addSubview(toView)
         
         
-        UIView.animateWithDuration(duration, delay: self.delay, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: nil, animations: {
+        UIView.animateKeyframesWithDuration(duration, delay: self.delay, options: option, animations: {
         
-            
+            UIView.addKeyframeWithRelativeStartTime(0, relativeDuration: 0, animations: {
             //setting alpha
-            fromView.alpha = 0.0
-            toView.alpha = 1
+            fromView.transform = offLeft
+            stick.transform = offLeft
+            })
+            UIView.addKeyframeWithRelativeStartTime(0, relativeDuration: 0, animations: {
+                //setting alpha
+                toView.alpha = 1
+                stick.alpha = 0.0
+            })
             
             
             
@@ -60,7 +70,7 @@ class zonkedTransitionsOne: NSObject, UIViewControllerAnimatedTransitioning, UIV
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
         if time == 0 {
-            return 1.75
+            return 2.75
         }
         
         return self.time
