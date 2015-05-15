@@ -20,6 +20,7 @@
 		2EF908CD1B0168B40091577D /* astonishedTransitionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF908CC1B0168B40091577D /* astonishedTransitionsTests.swift */; };
 		2EF908D71B0169310091577D /* zonkedTransitionsOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF908D61B0169310091577D /* zonkedTransitionsOne.swift */; };
 		AC61DDB11B04E27C004D1BEF /* zonkedTransitionsFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61DDB01B04E27C004D1BEF /* zonkedTransitionsFive.swift */; };
+		ACA6A6791B067FC600ADF254 /* zonkedTransitionsSeven.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA6A6781B067FC600ADF254 /* zonkedTransitionsSeven.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		2EF908CC1B0168B40091577D /* astonishedTransitionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = astonishedTransitionsTests.swift; sourceTree = "<group>"; };
 		2EF908D61B0169310091577D /* zonkedTransitionsOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = zonkedTransitionsOne.swift; sourceTree = "<group>"; };
 		AC61DDB01B04E27C004D1BEF /* zonkedTransitionsFive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = zonkedTransitionsFive.swift; sourceTree = "<group>"; };
+		ACA6A6781B067FC600ADF254 /* zonkedTransitionsSeven.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = zonkedTransitionsSeven.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				2E4E84801B04DB6E00EF4D02 /* zonkedTransitionsFour.swift */,
 				AC61DDB01B04E27C004D1BEF /* zonkedTransitionsFive.swift */,
 				2E4E84861B04E88100EF4D02 /* zonkedTransitionsSix.swift */,
+				ACA6A6781B067FC600ADF254 /* zonkedTransitionsSeven.swift */,
 				2EF908BD1B0168B40091577D /* Images.xcassets */,
 				2EF908BF1B0168B40091577D /* LaunchScreen.xib */,
 				2EF908B41B0168B40091577D /* Supporting Files */,
@@ -234,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E4E847B1B03720400EF4D02 /* zonkedTransitionsTwo.swift in Sources */,
+				ACA6A6791B067FC600ADF254 /* zonkedTransitionsSeven.swift in Sources */,
 				2E4E84811B04DB6E00EF4D02 /* zonkedTransitionsFour.swift in Sources */,
 				2E4E84871B04E88100EF4D02 /* zonkedTransitionsSix.swift in Sources */,
 				2EF908B91B0168B40091577D /* ViewController.swift in Sources */,
